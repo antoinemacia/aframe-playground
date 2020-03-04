@@ -1,12 +1,8 @@
-<p align="center">
-  <img src="https://github.com/sandoche/Jekyll-webpack-boilerplate/blob/master/icon.png?raw=true" width="200"/>
-</p>
-<h1 align="center">
-  Jekyll-webpack-boilerplate
-</h1>
-
-
 ## A-frame Playground
+
+### Netlify Website
+
+Ovewrview - https://app.netlify.com/sites/cocky-wescoff-b0fcb0/overview
 
 **Improved workflow**
 * Webpack working along with Jekyll
