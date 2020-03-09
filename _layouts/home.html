@@ -1,41 +1,36 @@
 ---
 layout: default
 ---
+
 <div class="home">
   <header class="home__headline-container">
     <h1 class="home__headline">Meows</h1>
-    <!-- Add the 'xrweb' attribute to your scene to make it an 8th Wall Web A-FRAME scene. -->
-    <a-scene xrweb xrextras-tap-recenter xrextras-almost-there xrextras-loading xrextras-runtime-error>
-
-      <a-camera position="0 8 8"></a-camera>
-
-      <a-entity light="type: directional;
-                   castShadow: true;
-                   intensity: 0.8;
-                   shadowCameraTop: 7;
-                   shadowMapHeight: 1024;
-                   shadowMapWidth: 1024;" position="1 4.3 2.5">
-      </a-entity>
-
-      <a-entity light="type: directional; castShadow: false; intensity: 0.5;" position="-0.8 3 1.85">
-      </a-entity>
-
-      <a-light type="ambient" intensity="1"></a-light>
-
-      <a-box position="-1.7 0.5 -2" rotation="0 45 0" material="roughness: 0.8; metalness: 0.2; color: #00EDAF;" shadow>
-      </a-box>
-
-      <a-sphere position="-1.175 1.25 -5.2" radius="1.25" material="roughness: 0.8; metalness: 0.2; color: #DD0065;"
-        shadow>
-      </a-sphere>
-
-      <a-cylinder position="2 0.75 -1.85" radius="0.5" height="1.5"
-        material="roughness: 0.8; metalness: 0.2; color: #FCEE21;" shadow>
-      </a-cylinder>
-
-      <a-circle position="0 0 -4" rotation="-90 0 0" radius="4"
-        material="roughness: 0.8; metalness: 0.5; color: #AD50FF" shadow>
-      </a-circle>
-    </a-scene>
   </header>
+
+  <!-- We must add the tap-place component to the scene so it has an effect -->
+  <a-scene xrweb tap-place xrextras-almost-there xrextras-loading xrextras-runtime-error>
+
+    <!-- We can define assets here to be loaded when A-Frame initializes -->
+    <a-assets>
+      <!-- Credit to Poly by Google for the model: https://poly.google.com/view/6pwiq7hSrHr -->
+      <a-asset-item id="treeModel" src="assets/models/tree.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
+    <a-camera position="0 8 0" raycaster="objects: .cantap" cursor="
+              fuse: false;
+              rayOrigin: mouse;">
+    </a-camera>
+
+    <a-entity light="type: directional;
+                   intensity: 0.8;" position="1 4.3 2.5">
+    </a-entity>
+
+    <a-light type="ambient" intensity="1"></a-light>
+
+    <!-- Adding the cantap class allows the ground to be clicked -->
+    <a-entity id="ground" class="cantap" geometry="primitive: box"
+      material="color: #ffffff; transparent: true; opacity: 0.0" scale="1000 2 1000" position="0 -1 0">
+    </a-entity>
+  </a-scene>
 </div>
