@@ -45,13 +45,14 @@
     "style-loader": "^0.18.2",
     "sw-precache": "^5.2.0",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^3.1.11",
+    "webpack-dev-server": "^3.7.1",
     "webpack-merge": "^4.1.0",
     "webpack-plugin-critical": "^1.0.0",
     "webpack-pwa-manifest": "^3.1.6"
   },
   "dependencies": {
     "aframe": "^1.0.4",
+    "localtunnel": "^2.0.0",
     "normalize.css": "^7.0.0"
   }
 }
